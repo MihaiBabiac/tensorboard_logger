@@ -46,6 +46,7 @@ class TensorBoardLogger {
             delete bucket_limits_;
             bucket_limits_ = nullptr;
         }
+        delete ofs_;
     }
     int add_scalar(const std::string &tag, int step, double value);
     int add_scalar(const std::string &tag, int step, float value);
