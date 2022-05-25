@@ -97,13 +97,13 @@ class TensorBoardLogger {
         v->set_allocated_histo(histo);
 
         return add_event(step, summary);
-    };
+    }
 
     template <typename T>
     int add_histogram(const std::string &tag, int step,
                       const std::vector<T> &values) {
         return add_histogram(tag, step, values.data(), values.size());
-    };
+    }
 
     // metadata (such as display_name, description) of the same tag will be
     // stripped to keep only the first one.
