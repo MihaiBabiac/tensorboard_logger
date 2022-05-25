@@ -122,6 +122,9 @@ class TensorBoardLogger {
                   const std::string &display_name = "",
                   const std::string &description = "");
     int add_text(const std::string &tag, int step, const char *text);
+    int add_text(const std::string &tag, int step, const std::string& text) {
+        return add_text(tag, step, text.c_str());
+    }
 
     // `tensordata` and `metadata` should be in tsv format, and should be
     // manually created before calling `add_embedding`
